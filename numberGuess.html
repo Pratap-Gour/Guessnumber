@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container{
+            background-color: burlywood;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            background-color: cadetblue;
+            padding: 50px 80px;
+            border-radius: 0px 50px;
+            
+        }
+        button{
+            padding: 5px 30px;
+            background-color: black;
+            color: darksalmon;
+            border-radius: 20px;
+        }
+        input{
+            border-radius: 10px;
+            padding: 5px 10px;
+            background-color: dimgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+        <h1>Guess the Number</h1>
+    <input type="number" id="num1">
+    <p id="won"></p>
+    <button onclick="guess()">Guess</button>
+        </div>
+    </div>
+    <script>
+        let rand = Math.floor(Math.random()*10);
+        function guess(){
+            
+            let input =parseInt(document.getElementById("num1").value);
+            if(input==rand){
+               document.getElementById("won").innerHTML="Yupp you won";
+            }
+            else if(input<rand){
+                alert("Guess a higher Number");
+
+            }
+            else{
+                alert("Guess a lower Number")
+            }
+        }
+    </script>
+    
+</body>
+</html>
